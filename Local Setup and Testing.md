@@ -67,9 +67,6 @@ This section outlines the necessary software installations and configurations on
     }
     ```
 
-Here's your content converted into **Markdown** format:
-
-````markdown
 #### E. Testing the Backend in Local Machine
 
 1. Open **Command Prompt** or **PowerShell**.
