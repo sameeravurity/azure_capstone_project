@@ -67,18 +67,47 @@ This section outlines the necessary software installations and configurations on
     }
     ```
 
-#### E. Testing the Backend in Local Machine:
+Here's your content converted into **Markdown** format:
 
-1.  Open **Command Prompt** or **PowerShell**.
-2.  Navigate to the directory where your backend `.csproj` file exists (e.g., `cd path\to\QuickCart\QuickCart`).
-3.  Run the command: `dotnet run`
-4.  Check the backend by Browse to: `http://localhost:5001/api/home/getproducts` (ensure you replace `/openbrowser` if it's not part of the actual endpoint).
+````markdown
+#### E. Testing the Backend in Local Machine
 
-#### F. Testing the Frontend in Local Machine:
-
-1.  Open **Command Prompt** or **PowerShell**.
-2.  Navigate to the directory of your frontend project where `angular` has already been installed (e.g., `cd path\to\Quick-Cart-FrontEnd`).
-3.  Run the command: `npm install` (to install project dependencies).
-4.  Run the command: `ng serve`
-5.  Check the application by Browse to: `http://localhost:4200/`
+1. Open **Command Prompt** or **PowerShell**.
+2. Navigate to the directory where your backend `.csproj` file exists:  
+   ```bash
+   cd path\to\QuickCart\QuickCart
 ````
+
+3. Run the backend application:
+
+   ```bash
+   dotnet run
+   ```
+4. Check the backend by browsing to:
+   [http://localhost:5001/api/home/getproducts](http://localhost:5001/api/home/getproducts)
+   *(Ensure you replace `/openbrowser` if it's not part of the actual endpoint)*
+
+---
+
+#### F. Testing the Frontend in Local Machine
+
+1. Open **Command Prompt** or **PowerShell**.
+2. Navigate to the directory of your frontend Angular project:
+
+   ```bash
+   cd path\to\Quick-Cart-FrontEnd
+   ```
+3. Install the project dependencies:
+
+   ```bash
+   npm install
+   ```
+4. Serve the Angular application:
+
+   ```bash
+   ng serve
+   ```
+5. Check the application by browsing to:
+   [http://localhost:4200/](http://localhost:4200/)
+
+```
