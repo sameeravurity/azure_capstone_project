@@ -14,7 +14,7 @@ https://akspks880187@dev.azure.com/akspks880187/QuickCart/_git/LoginService.git
 #### Create an Azure key vault and add the connection string as a secret in the key vault. Fill 
 in details in the Basic Tab. In Access Configurations --> Select Vault Access Policy --> 
 Select Your Account --> Create Keyvault account. 
-####  Add secrets in Keyvault. --> Add  Name as DBConnectionString --> Add URL as vaule --> Create 
+* Add secrets in Keyvault. --> Add  Name as DBConnectionString --> Add URL as vaule --> Create 
 #### Now to integrate this with Azure pipeline, go to Azure DevOps --> Azure Pipeline --> Library 
 Create a New Variable Group 
 Give name --> Enable "Link Secrets from Azure KeyVault 
@@ -22,8 +22,8 @@ Authenticate the subscription and keyvault here
 If not connecting --> Go to Keyvault --> Go to Access Policy --> Select all the permissions 
 Once a variable group is created, reference it in the release pipeline. 
 #### Edit release pipeline --> Go to variables --> Go to Variable Groups --> Click on "Link Variable Group" --> Select Scope --> Link 
-#### Goto Task in the same release pipeline --> Add "Azure App Service Settings" --> This task should be the first task in that stage. 
-#### Fill in the necessary details --> Scroll down --> In connection string section --> Add keyvault details 
+* Goto Task in the same release pipeline --> Add "Azure App Service Settings" --> This task should be the first task in that stage. 
+* Fill in the necessary details --> Scroll down --> In connection string section --> Add keyvault details 
 ```
 [ 
 ] 
@@ -31,7 +31,7 @@ Once a variable group is created, reference it in the release pipeline.
 } 
 "name": "kvquickkartsam", 
 "value": "$(DBConnectionString)" 
-● Keyvault name is Variable Group name. Value to be referenced with $ symbol. --> Save 
+* Keyvault name is Variable Group name. Value to be referenced with $ symbol. --> Save 
 and run 
 [ 
 ] 
@@ -41,11 +41,11 @@ and run
 "value": "$(DBConnectionString)"
 ```
 #### Change the Loginfunction.cs file to refer to the variable groups declared in the library to refer to the keyvault where the db connection string is stored. 
-● Once the changes are made we can build the code by pressing F5. 
-● Once the code  is built we can then publish it to the Azure portal by selecting publish 
+* Once the changes are made we can build the code by pressing F5. 
+* Once the code  is built we can then publish it to the Azure portal by selecting publish 
 project and connect to Azure portal and create a new function app by filling required 
 fields.  
-#### Once the function app is created we can check if it is up and running by clicking its url. 
+* Once the function app is created we can check if it is up and running by clicking its url. 
 #### Make the required change in the home-page.service.ts file from 
 C:\Users\Sameera\source\repos\Quick-Cart(FrontEnd)\src\app\home\HomePage-Services 
 in visual studio. 
@@ -154,24 +154,24 @@ subscribeFunctionKey:
 #### The files are changed such that the home-page.service.ts file refers to the environment 
 files for the function key instead of hardcoding the value in the code itself which is 
 publicly accessible. 
-● Once the changes are made and saved we can test it in the local machine by once again 
+* Once the changes are made and saved we can test it in the local machine by once again 
 building the application using ng build and testing it on the local host. 
-● We can then re deploy the application by running the pipeline for frontend and check the 
+* We can then re deploy the application by running the pipeline for frontend and check the 
 changes made. 
 #### Download and install Azure Functions Runtime 
 https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=window
  s%2Cisolated-process%2Cnode-v4%2Cpython-v2%2Chttp-trigger%2Ccontainer-apps&p
  ivots=programming-language-csharp 
-●  Click on Publish 
-● Go to Azure Portal with Function App. Scroll down and see LoginFunction getting 
+* Click on Publish 
+* Go to Azure Portal with Function App. Scroll down and see LoginFunction getting 
 deployed 
 #### Enable CORS policy for Azure Functions 
-  Copy static web app URL. 
-  Go inside the LoginFunction App 
-  Search for CORS 
-  Add your static web app link 
-  Add * in next text box 
-  Save 
-● It will take up to 10 min to reflect this functionality. 
-● See to it that the pipeline is running. Once the pipeline finishes, then login. 
-● You should be able to login now.
+* Copy static web app URL. 
+* Go inside the LoginFunction App 
+* Search for CORS 
+* Add your static web app link 
+* Add * in next text box 
+* Save 
+* It will take up to 10 min to reflect this functionality. 
+* See to it that the pipeline is running. Once the pipeline finishes, then login. 
+* You should be able to login now.
